@@ -63,18 +63,20 @@ function createCats(cats) {
        const name = document.createElement("h5");
        const age = document.createElement("p");
        
-       name.innerHTML = cat.name;
+       name.innerHTML =`Name: ${cat.name}`;
        if(cat.hasOwnProperty("age")) {
-           age.innerHTML = cat.age
+           age.innerHTML =`Age: ${cat.age}`;
        }
        else{
-           age.innerHTML = "Age unknown"
+           age.innerHTML = "Age: age unknown"
        }
        
        wrapper.appendChild(name);
        wrapper.appendChild(age);
     
-       
+       document.getElementsByClassName("cat-container")[0].appendChild(wrapper)
 
     }) 
 }
+
+createCats(cats)
